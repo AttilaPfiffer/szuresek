@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pfiffer Attila</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <main class = "container-fluid">
+        <header>
+            <h1>Listakezelés</h1>
+        </header>
+        <article>
+            <div class="urlap">
+                <form>
+                    <div class="mb-3 mt-3">
+                      <label for="nev" class="form-label">Név:</label>
+                      <input type="email" class="form-control" id="email" placeholder="valaki vagyok" name="nev">
+                    </div>
+                    <div class="mb-3">
+                      <label for="kor" class="form-label">Kor:</label>
+                      <input type="number" class="form-control" id="pwd" min = "0" max = "120" name="kor">
+                    </div>
+
+                    <div class="form-check mb-3">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="nem"> Férfi
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="radio" name="nem"> Nő
+                        </label>
+                      </div>
+                    <button type="submit" class="btn btn-primary">Hozzáad</button>
+                  </form>
+            </div>
+            <div class="szuro">
+                <label for="nev" class="form-label">Szűrés név szerint:</label>
+                <input type="text" class="form-control" id="email" placeholder="Kezd el szűrni név szerint" name="nev">
+            </div>
+            <div class="adatok">
+
+            </div>
+        </article>
+    </main>
+</body>
+</html>
