@@ -1,4 +1,6 @@
 import { emberekLISTA } from "./adat.js";
+import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
+import { sorTorles, szuresNevSzerint, tablazatRendez } from "./adatkezelo.js";
 /* jelenítsük meg az adatainkat egy táblázatban az adatok div-ben az urlap divben legyen egy űrlap, amivel ilyen adatokat tudunk táblázatba beletenni 
 
 1. ha a táblázat név fejlécére kattintunk, akkor azon mező szerint tudjuk rendezni a táblázatot.
@@ -16,3 +18,44 @@ Milyen függvények kellenek?
 Ezután megjelenítjük a szűrt listát az oldalon.
 Akkor fog lefutni amikor megváltozik a szűrőmező tartalma
 */
+
+let nevIrany = 1;
+init(emberekLISTA)
+nevSzuresEsemeny();
+
+function init(lista) {
+    let txt = tablazatOsszeallit(lista)
+    megjelenites(txt)
+    nevRendezEsemeny(lista);
+    sorTorlesEsemeny();
+}
+
+
+function nevRendezEsemeny(lista) {
+    const nevELEM = $(".adatok th").eq(0)
+    nevELEM.on("click", function() {
+        const LISTA = tablazatRendez(lista, nevIrany)
+        console.log(LISTA)
+        nevIrany *= (-1)
+        init(LISTA);
+    })
+}
+
+function nevSzuresEsemeny() {
+    const szuroELEM = $("#szNev")
+    szuroELEM.on("keyup", function() {
+        let szuroSzoveg = szuroELEM.val()
+        const LISTA = szuresNevSzerint(emberekLISTA, szuroSzoveg)
+        init(LISTA)
+    })
+}
+
+
+function sorTorlesEsemeny() {
+    const kukaELEM = $(".kuka")
+    kukaELEM.on("click", function() {
+        let index = event.target.id
+        const LISTA = sorTorles(emberekLISTA, index)
+        init(LISTA)
+    })
+}
