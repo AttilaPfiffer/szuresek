@@ -15,27 +15,31 @@
         </header>
         <article>
             <div class="urlap">
-                <form>
+                <form class="was-validated">
                     <div class="mb-3 mt-3">
-                      <label for="nev" class="form-label">Név:</label>
-                      <input type="email" class="form-control" id="email" placeholder="valaki vagyok" name="nev">
+                      <label for="nev" id = "nev" class="form-label">Név:</label>
+                      <input type="name" class="form-control" id="email" required placeholder="valaki vagyok" name="nev">
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">A név megadása kötelező!</div>
                     </div>
                     <div class="mb-3">
-                      <label for="kor" class="form-label">Kor:</label>
-                      <input type="number" class="form-control" id="pwd" min = "0" max = "120" name="kor">
+                      <label for="kor" id = "kor" class="form-label">Kor:</label>
+                      <input type="number" class="form-control" id="pwd" required min = "0" max = "120" name="kor">
+                      <div class="valid-feedback">Valid.</div>
+                      <div class="invalid-feedback">0 és 120 között</div>
                     </div>
 
                     <div class="form-check mb-3">
                       <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="nem"> Férfi
+                        <input class="form-check-input" type="radio" name="nem" value = "false"> Férfi
                       </label>
                     </div>
                     <div class="form-check mb-3">
                         <label class="form-check-label">
-                          <input class="form-check-input" type="radio" name="nem"> Nő
+                          <input class="form-check-input" type="radio" name="nem" value = "true"> Nő
                         </label>
                       </div>
-                    <button type="submit" class="btn btn-primary">Hozzáad</button>
+                    <button type="submit" id = "submit" class="btn btn-primary">Hozzáad</button>
                   </form>
             </div>
             <div class="szuro">

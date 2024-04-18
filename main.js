@@ -1,6 +1,7 @@
 import { emberekLISTA } from "./adat.js";
 import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
 import { sorTorles, szuresNevSzerint, tablazatRendez } from "./adatkezelo.js";
+import { adatokLista } from "./urlapKezelo.js";
 /* jelenítsük meg az adatainkat egy táblázatban az adatok div-ben az urlap divben legyen egy űrlap, amivel ilyen adatokat tudunk táblázatba beletenni 
 
 1. ha a táblázat név fejlécére kattintunk, akkor azon mező szerint tudjuk rendezni a táblázatot.
@@ -23,7 +24,9 @@ let nevIrany = 1;
 init(emberekLISTA)
 nevSzuresEsemeny();
 
-function init(lista) {
+adatokLista(emberekLISTA)
+
+export function init(lista) {
     let txt = tablazatOsszeallit(lista)
     megjelenites(txt)
     nevRendezEsemeny(lista);
